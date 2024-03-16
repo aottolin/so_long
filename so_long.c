@@ -15,7 +15,7 @@ int	main(int argc, char **argv)
 	d = ft_memory(1, sizeof(t_list));
 	if (!d)
 		return (0);
-	d->mlx = mlx_init();
+	//d->mlx = mlx_init();
 	init_data(d, argv[1]);
 	return (0);
 }
@@ -24,7 +24,8 @@ int	init_data(d_list *d, char *map)
 {
 	d->moves = 0;
 	check_extension(map, d);
-
+	read_map(map, d);
+	return (0);
 
 }
 

@@ -1,8 +1,29 @@
 #include "so_long_lib.h"
 
+void	ft_error2(d_list *d, int nb)
+{
+	d->moves++;
+	d->moves--;
+	if (nb == 9)
+		ft_printf("ERROR!! -No se puede leer el mapa");
+}
+
 void	ft_error(d_list *d, int nb)
 {
+
+	if (nb > 7)
+		ft_error2(d, nb);	
 	if (nb == 1)
-		ft_printf("ERROR!! -El argumento debe ser una extension .ber");
-	free(d);
+		ft_printf("ERROR!! -El argumento debe ser una extension .ber\n");
+	if (nb == 2)
+		ft_printf("ERROR!! -El mapa contiene caracteres incorrectos\n");
+	if (d->exx != 1 && nb == 5)
+		ft_printf("ERROR!! -El mapa debe contener 1 salida\n");
+	if (d->player < 1 && nb == 5)
+		ft_printf("ERROR!! - El mapa debe contener un jugador en posicion inicial\n");
+	if (d->player > 1 && nb == 5)
+		ft_printf("ERROR!! - El mapa debe contener UN SOLO jugador en posicion inicial\n");
+	if (d->consum < 1 && nb == 5)
+		ft_printf("ERROR!! -El juego debe tener al menos 1 consumible\n");
+	ft_free(d);
 }
