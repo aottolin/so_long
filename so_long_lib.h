@@ -1,11 +1,13 @@
 # ifndef SO_LONG_LIB_H
 # define SO_LONG_LIB_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
-#include "ft_printf/ft_printf.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
+# include "ft_printf/ft_printf.h"
+# include<fcntl.h>
+
 
 typedef struct	dd_list
 {

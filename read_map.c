@@ -5,7 +5,6 @@ void	read_map(char *map, d_list *d)
 	int		fd;
 	char	*line;
 
-
 	fd = open(map, O_RDONLY);
 	if (fd < 0)
 		ft_free(d);
@@ -22,7 +21,6 @@ void	read_map(char *map, d_list *d)
 		//if (ft_strlen2(line) + d->linecontrol != d->width)
 			//ft_error(d, 7);
 		d->content = str_join(d->content, line);
-		
 	}
 	free(line);
 	close(fd);
@@ -54,11 +52,11 @@ void	checkline(d_list *d)
 			d->space_free++;
 		x++;
 	}
-	ft_printf("consum:%d\n", d->consum);
-	ft_printf("exx:%d\n", d->exx);
-	ft_printf("player:%d\n", d->player);
-	ft_printf("wall:%d\n", d->wall);
-	ft_printf("space_free:%d\n", d->space_free);
+	//ft_printf("consum:%d\n", d->consum);
+	//ft_printf("exx:%d\n", d->exx);
+	//ft_printf("player:%d\n", d->player);
+	//ft_printf("wall:%d\n", d->wall);
+	//ft_printf("space_free:%d\n", d->space_free);
 	if (d->exx != 1 || d->player != 1 || d->consum < 1)
 		ft_error(d, 5);
 }
