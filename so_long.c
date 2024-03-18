@@ -17,6 +17,7 @@ int	main(int argc, char **argv)
 		return (0);
 	//d->mlx = mlx_init();
 	init_data(d, argv[1]);
+	ft_free(d);
 	return (0);
 }
 
@@ -26,7 +27,6 @@ int	init_data(d_list *d, char *map)
 	check_extension(map, d);
 	read_map(map, d);
 	return (0);
-
 }
 
 void	check_extension(char *ext, d_list *d)

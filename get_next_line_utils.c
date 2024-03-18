@@ -16,43 +16,30 @@ char	*str_chr(char *save, int newline)
 	return (NULL);
 }
 
-char *str_join(char *save, char *buffer)
+char	*str_join(char *s1, char *s2)
 {
-    int len_save = (save != NULL) ? strlen(save) : 0;
-    int len_buffer = (buffer != NULL) ? strlen(buffer) : 0;
-    int total_length = len_save + len_buffer + 1; // +1 para el carácter nulo
-    char *new;
+	char	*str;
+	size_t	i;
+	size_t	c;
 
-    new = (char *)malloc(total_length * sizeof(char));
-    if (new == NULL) {
-        // Manejo de error: No se pudo asignar memoria
-        return NULL;
-    }
-
-    // Copiar la cadena save a new
-    if (save != NULL) {
-        strcpy(new, save);
-    } else {
-        new[0] = '\0';
-    }
-
-    // Concatenar la cadena buffer a new
-    if (buffer != NULL) {
-        strcat(new, buffer);
-    }
-
-    return new;
+	if (!s1)
+	{
+		s1 = malloc(sizeof(char) + 1);
+		s1[0] = 0;
+	}
+	str = (char *)malloc(sizeof(char) * (ft_strlen2(s1) + ft_strlen2(s2) + 1));
+	if (!str)
+		return (0);
+	i = -1;
+	while (s1[++i])
+		str[i] = s1[i];
+	c = 0;
+	while (s2[c])
+	{
+		str[i + c] = s2[c];
+		c++;
+	}
+	str[ft_strlen2(s1) + ft_strlen2(s2)] = '\0';
+	//free(s1);
+	return (str);
 }
-
-
-int	len_line(char *line)
-{
-	int	len;
-
-	len = 0;
-	while (line[len] != '\0' && line[len] != '\n')
-		len++;
-	return (len);
-}
-
-
