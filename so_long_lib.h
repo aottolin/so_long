@@ -6,8 +6,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include "ft_printf/ft_printf.h"
-# include<fcntl.h>
-
+# include <fcntl.h>
 
 typedef struct	dd_list
 {
@@ -17,7 +16,7 @@ typedef struct	dd_list
 	int		errors;
 	char	*content;
 	int		height;
-	int		width;
+	int		width_d;
 	int		consum;
 	int		exx;
 	int		player;
@@ -40,12 +39,10 @@ char	*get_next_line(int fd);
 char	*get_read_save(int fd, char *save);
 char	*get_line(char *save);
 char	*get_rest(char *save);
-char	*str_join(char *oldline, char *line);
+char	*str_join(char *save, char *s2);
 void	read_map(char *map, d_list *d);
-char	*str_join(char *save, char *buffer);
 void	check_extension(char *ext, d_list *d);
 void	checkline(d_list *d);
-char	*str_join(char *s1, char *s2);
 void	check_line_break(char *line, d_list *d);
 int		init_data(d_list *d, char *map);
 #endif

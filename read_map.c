@@ -9,18 +9,33 @@ void	read_map(char *map, d_list *d)
 	if (fd < 0)
 		ft_free(d);
 	d->linecontrol = 2;
+	d->width_d = 0;
+	d->height = 0;
+	d->content = (char *)malloc(sizeof(char) * 1);
 	while (d->linecontrol != 1)
 	{
 		d->height++;
+		ft_printf("wid%d\n", d->width_d);
 		line = get_next_line(fd);
+		ft_printf("%s", line);
 		if (!line)
 			break;
 		if (d->linecontrol == 2)
-			d->width = ft_strlen2(line);
+			d->width_d = ft_strlen2(line);
 		check_line_break(line, d);
-		//if (ft_strlen2(line) + d->linecontrol != d->width)
-			//ft_error(d, 7);
+		ft_printf("wid%d\n", d->width_d);
+		ft_printf("linec%d\n", d->linecontrol);
+		ft_printf("strl%d\n", ft_strlen2(line));
+		if ((ft_strlen2(line) + d->linecontrol) != d->width_d)
+		{
+			ft_printf("wid%d\n", d->width_d);
+			ft_error(d, 7);
+		}
+		ft_printf("wid%d\n", d->width_d);
 		d->content = str_join(d->content, line);
+		ft_printf("wid%d\n", d->width_d);
+		//if (!line)
+		//	free(line);
 	}
 	free(line);
 	close(fd);
@@ -30,16 +45,20 @@ void	read_map(char *map, d_list *d)
 void	checkline(d_list *d)
 {
 	int	x;
+	int	counter;
 
+	counter = 1;
 	x = 0;
 	d->player = 0;
-	ft_printf("%s", d->content);
+	ft_printf("DCONENT:%s", d->content);
 	while (d->content[x])
 	{
 		if (d->content[x] != '1' && d->content[x] != '0' 
 				&& d->content[x] != 'C' && d->content[x] != 'E' 
 				&& d->content[x] != 'P' && d->content[x] != '\n')
 			ft_error(d, 2);
+		if (d->content[x] == '\n')
+			counter++;
 		if (d->content[x] == 'C')
 			d->consum++;
 		if (d->content[x] == 'E')
@@ -52,11 +71,8 @@ void	checkline(d_list *d)
 			d->space_free++;
 		x++;
 	}
-	//ft_printf("consum:%d\n", d->consum);
-	//ft_printf("exx:%d\n", d->exx);
-	//ft_printf("player:%d\n", d->player);
-	//ft_printf("wall:%d\n", d->wall);
-	//ft_printf("space_free:%d\n", d->space_free);
+	if (counter == d->width_d)
+		ft_error(d, 7);
 	if (d->exx != 1 || d->player != 1 || d->consum < 1)
 		ft_error(d, 5);
 }

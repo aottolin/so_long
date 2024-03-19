@@ -2,15 +2,15 @@
 
 char	*get_next_line(int fd)
 {
-	char	*line;
-	char	*save;
+	char		*line;
+	char		*save;
 
+	if (fd < 0 || read(fd, 0, 0) < 0)
+		return (NULL);
 	save = NULL;
 	if (fd < 0)
 		return (NULL);
 	line = get_read_save(fd, save);
-	//if (!line)
-	//	free(line);
 	return (line);
 }
 
@@ -30,6 +30,7 @@ char	*get_read_save(int fd, char *save)
 		if (nbchars == -1)
 		{
 			free(buffer);
+			free(save);
 			return (NULL);
 		}
 		if (nbchars > 0)
@@ -38,7 +39,7 @@ char	*get_read_save(int fd, char *save)
 			save = str_join(save, buffer);
 		}
 	}
-	//free(buffer);
+	free(buffer);
 	return (save);
 }
 
