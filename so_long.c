@@ -12,7 +12,7 @@ int	main(int argc, char **argv)
 		ft_printf("%s\n", argv[1]);
 		return (0);
 	}
-	d = ft_memory(1, sizeof(t_list));
+	d = ft_calloc(1, sizeof(d_list));
 	if (!d)
 		return (0);
 	//d->mlx = mlx_init();

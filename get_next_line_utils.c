@@ -22,11 +22,11 @@ char	*str_join(char *save, char *s2)
 	size_t	i;
 	size_t	c;
 
-	/*if (!save)
+	if (!save)
 	{
 		save = (char *)malloc(sizeof(char) + 1);
 		save[0] = '\0';
-	}*/
+	}
 	str = (char *)malloc(sizeof(char) * (ft_strlen2(save) + ft_strlen2(s2) + 1));
 	if (!str)
 		return (0);
@@ -40,6 +40,6 @@ char	*str_join(char *save, char *s2)
 		c++;
 	}
 	str[ft_strlen2(save) + ft_strlen2(s2)] = '\0';
-	//free(save);
+	free(save);
 	return (str);
 }
