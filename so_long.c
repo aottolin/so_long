@@ -1,8 +1,6 @@
 #include "so_long_lib.h"
 #include "/Users/alexisottolini/Desktop/42Cursus/so_long/mlx/mlx.h"
 
-void	check_extension(char *ext, d_list *d);
-
 int	main(int argc, char **argv)
 {
 	d_list	*d;

@@ -32,29 +32,25 @@ typedef struct	dd_list
 	void	*npcstart;
 }	d_list;
 
-void	*ft_memory(size_t count, size_t size);
-
+void	*ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
-void	*ft_calloc(size_t count, size_t size);
+int		init_data(d_list *d, char *map);
+void	init_img(d_list *d);
+void	check_extension(char *ext, d_list *d);
 int		ft_strlen2(char *str);
 void	ft_error(d_list *d, int nb);
 int		ft_free(d_list *d);
-int		len_line(char *line);
-char	*str_chr(char *save, int newline);
-char	*get_next_line(int fd);
 char	*get_read_save(int fd, char *save);
+char	*get_next_line(int fd);
 char	*get_line(char *save);
 char	*get_rest(char *save);
+int		len_line(char *line);
+char	*str_chr(char *save, int newline);
 char	*str_join(char *save, char *s2);
 void	read_map(char *map, d_list *d);
-void	check_extension(char *ext, d_list *d);
 void	checkline(d_list *d);
 void	check_line_break(char *line, d_list *d);
 void	check_first_last_line(d_list *d);
 void	check_start_line(d_list *d);
-int		init_data(d_list *d, char *map);
-void	init_img(d_list *d);
-void	calc_xy(char r, int i, d_list *d);
-void	print_map(d_list *d);
 #endif
