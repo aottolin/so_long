@@ -109,7 +109,7 @@ void	check_start_line(d_list *d)
 	i = d->width_d;
 	while (i < ft_strlen2(d->content))
 	{
-		if (d->content[i] == '3')
+		if (d->content[i] == '1')
 			i = i + d->width_d;
 		else
 			ft_error(d, 3);

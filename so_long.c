@@ -1,4 +1,5 @@
 #include "so_long_lib.h"
+#include "/Users/alexisottolini/Desktop/42Cursus/so_long/mlx/mlx.h"
 
 void	check_extension(char *ext, d_list *d);
 
@@ -15,8 +16,9 @@ int	main(int argc, char **argv)
 	d = ft_calloc(1, sizeof(d_list));
 	if (!d)
 		return (0);
-	//d->mlx = mlx_init();
+	d->mlx = mlx_init();
 	init_data(d, argv[1]);
+	mlx_loop(d->mlx);
 	ft_free(d);
 	return (0);
 }
@@ -26,7 +28,24 @@ int	init_data(d_list *d, char *map)
 	d->moves = 0;
 	check_extension(map, d);
 	read_map(map, d);
+	init_img(d);
+	d->win = mlx_new_window(d->mlx, d->x, d->y, "so_long");
 	return (0);
+}
+
+void	init_img(d_list *d)
+{
+	int	w;
+	int	h;
+
+	w = 50;
+	h = 50;
+	d->y = (ft_strlen2(d->content) / d->width_d + 1) * 50;
+	d->x = (d->width_d - 1) * 50;
+	d->fond = mlx_xpm_file_to_image(d->mlx, "fond.xpm", &w, &h);
+
+
+
 }
 
 void	check_extension(char *ext, d_list *d)

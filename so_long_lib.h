@@ -12,7 +12,9 @@ typedef struct	dd_list
 {
 	void	*mlx;
 	void	*win;
+	void	*fond;
 	int		moves;
+	void	*imgexit;
 	int		errors;
 	char	*content;
 	int		height;
@@ -23,6 +25,11 @@ typedef struct	dd_list
 	int		wall;
 	int		space_free;
 	int		linecontrol;
+	int		y;
+	int		x;
+	void	*poke;
+	void	*bush;
+	void	*npcstart;
 }	d_list;
 
 void	*ft_memory(size_t count, size_t size);
@@ -47,4 +54,7 @@ void	check_line_break(char *line, d_list *d);
 void	check_first_last_line(d_list *d);
 void	check_start_line(d_list *d);
 int		init_data(d_list *d, char *map);
+void	init_img(d_list *d);
+void	calc_xy(char r, int i, d_list *d);
+void	print_map(d_list *d);
 #endif
