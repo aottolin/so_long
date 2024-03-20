@@ -11,6 +11,8 @@ void	ft_error2(d_list *d, int nb)
 void	ft_error(d_list *d, int nb)
 {
 
+	if (nb == 3)
+		ft_printf("❌ERROR❌ ---->El mapa debe estar rodeado de muros\n");
 	if (nb > 7)
 		ft_error2(d, nb);
 	if (nb == 7)

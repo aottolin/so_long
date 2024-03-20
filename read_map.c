@@ -30,6 +30,7 @@ void	read_map(char *map, d_list *d)
 			free(line);
 	}
 	close(fd);
+	check_first_last_line(d);
 	checkline(d);
 }
 
@@ -67,6 +68,52 @@ void	checkline(d_list *d)
 		ft_error(d, 7);
 	if (d->exx != 1 || d->player != 1 || d->consum < 1)
 		ft_error(d, 5);
+}
+
+void	check_first_last_line(d_list *d)
+{
+	int	i;
+	int	last;
+
+	i = 0;
+	last = ft_strlen2(d->content) - d->width_d;
+	while (i != d->width_d)
+	{
+		if (d->content[i] == '1' || d->content[i] == '\n')
+			i++;
+		else
+			ft_error(d, 3);
+	}
+	while (last != ft_strlen2(d->content))
+	{
+		if (d->content[last] == '1' || d->content[last] == '\n')
+			last++;
+		else
+			ft_error(d, 3);
+	}
+	check_start_line(d);
+}
+
+void	check_start_line(d_list *d)
+{
+	int	i;
+	
+	i = d->width_d - 2;
+	while (i < ft_strlen2(d->content))
+	{
+		if (d->content[i] == '1')
+			i = i + d->width_d;
+		else
+			ft_error(d, 2);
+	}
+	i = d->width_d;
+	while (i < ft_strlen2(d->content))
+	{
+		if (d->content[i] == '3')
+			i = i + d->width_d;
+		else
+			ft_error(d, 3);
+	}
 }
 
 void	check_line_break(char *line, d_list *d)

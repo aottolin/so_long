@@ -44,5 +44,7 @@ void	read_map(char *map, d_list *d);
 void	check_extension(char *ext, d_list *d);
 void	checkline(d_list *d);
 void	check_line_break(char *line, d_list *d);
+void	check_first_last_line(d_list *d);
+void	check_start_line(d_list *d);
 int		init_data(d_list *d, char *map);
 #endif
