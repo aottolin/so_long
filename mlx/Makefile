@@ -1,6 +1,3 @@
-#
-#
-
 GREEN =			\033[0;92m
 
 NOM=libmlx.a
@@ -13,7 +10,7 @@ CFLAGS+=-O2 -Wno-deprecated
 # add to match string put with X11 in size and position
 CFLAGS+= -DSTRINGPUTX11
 
-all:		$(MAKE) $(NOM)
+all:		$(NOM)
 
 $(NOM)::	$(OBJ)
 			@ar -r $(NOM) $(OBJ)

@@ -1,5 +1,5 @@
 #include "so_long_lib.h"
-#include "/Users/alexisottolini/Desktop/42Cursus/so_long/mlx/mlx.h"
+#include "../so_long/mlx/mlx.h"
 
 int	main(int argc, char **argv)
 {
@@ -28,6 +28,7 @@ int	init_data(d_list *d, char *map)
 	read_map(map, d);
 	init_img(d);
 	d->win = mlx_new_window(d->mlx, d->x, d->y, "so_long");
+	print_map(d);
 	return (0);
 }
 
@@ -40,7 +41,11 @@ void	init_img(d_list *d)
 	h = 50;
 	d->y = (ft_strlen2(d->content) / d->width_d + 1) * 50;
 	d->x = (d->width_d - 1) * 50;
-	d->fond = mlx_xpm_file_to_image(d->mlx, "fond.xpm", &w, &h);
+	//d->img_fond = mlx_xpm_file_to_image(d->mlx, "", &w, &h);
+	//d->img_food = mlx_xpm_file_to_image(d->mlx, "", &w, &h);
+	//d->img_exit = mlx_xpm_file_to_image(d->mlx, "", &w, &h);
+	d->img_walls = mlx_xpm_file_to_image(d->mlx, "fox.xpm", &w, &h);
+	//d->img_player = mlx_xpm_file_to_image(d->mlx, "fox.xpm", &w, &h);
 
 
 
