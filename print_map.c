@@ -38,15 +38,15 @@ void	calcul_y_x(char c, int iter, d_list *d)
 	if (d->errors == 0)
 	{
 
-		//if (c == 'C')
-		//	mlx_put_image_to_window(d->mlx, d->win, d->img_food, x_, y_);
-		//if (c == 'E')
-		//	mlx_put_image_to_window(d->mlx, d->win, d->img_exit, x_, y_);
+		if (c == 'C')
+			mlx_put_image_to_window(d->mlx, d->win, d->img_food, x_, y_);
+		if (c == 'E')
+			mlx_put_image_to_window(d->mlx, d->win, d->img_exit, x_, y_);
 		if (c == '1')
 			mlx_put_image_to_window(d->mlx, d->win, d->img_walls, x_, y_);
-		//if (c == '0')
-		//	mlx_put_image_to_window(d->mlx, d->win, d->img_fond, x_, y_);
-		//if (c == 'P')
-			//mlx_put_image_to_window(d->mlx, d->win, d->img_player, x_, y_);
+		if (c == '0')
+			mlx_put_image_to_window(d->mlx, d->win, d->img_fond, x_, y_);
+		if (c == 'P')
+			mlx_put_image_to_window(d->mlx, d->win, d->img_player, x_, y_);
 	}
 }
