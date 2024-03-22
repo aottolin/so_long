@@ -3,6 +3,17 @@
 
 void	print_map(d_list *d)
 {
+	calcul_y_x('P', 2, d);
+	//calcul_y_x('C', 2, d);
+	//calcul_y_x('0', 3, d);
+	//calcul_y_x('1', 1, d);
+	//calcul_y_x('1', 2, d);
+	//calcul_y_x('1', 3, d);
+	//calcul_y_x('1', 4, d);
+	//calcul_y_x('1', 5, d);
+	calcul_y_x('1', 0, d);
+	//calcul_y_x('E', 5, d);
+	/*
 	int x;
 
 	x = 0;
@@ -25,7 +36,7 @@ void	print_map(d_list *d)
 		if (d->content[x] == '0')
 			calcul_y_x('0', x, d);
 		x++;
-	}
+	}*/
 }
 
 void	calcul_y_x(char c, int iter, d_list *d)

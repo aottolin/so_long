@@ -17,7 +17,9 @@ typedef struct	dd_list
 	void	*img_food;
 	void	*img_walls;
 	void	*img_player;
+	void	*background;
 	int		moves;
+	int		color;
 	int		errors;
 	int		height;
 	int		width_d;

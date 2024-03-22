@@ -43,7 +43,7 @@ void	checkline(d_list *d)
 	x = 0;
 	d->player = 0;
 	d->exx = 0;
-	ft_printf("DCONENT:\n%s", d->content);
+	//ft_printf("DCONENT:\n%s", d->content);
 	while (d->content[x])
 	{
 		if (d->content[x] != '1' && d->content[x] != '0' 
