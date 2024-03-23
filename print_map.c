@@ -3,28 +3,19 @@
 
 void	print_map(d_list *d)
 {
-	calcul_y_x('P', 2, d);
-	//calcul_y_x('C', 2, d);
-	//calcul_y_x('0', 3, d);
-	//calcul_y_x('1', 1, d);
-	//calcul_y_x('1', 2, d);
-	//calcul_y_x('1', 3, d);
-	//calcul_y_x('1', 4, d);
-	//calcul_y_x('1', 5, d);
-	calcul_y_x('1', 0, d);
-	//calcul_y_x('E', 5, d);
-	/*
+	//calcul_y_x('1', 0, d);
 	int x;
 
 	x = 0;
-	while (d->content[x])
+	while (d->content[x] != '\0')
 	{
 		if (d->content[x] == '\n')
 			x++;
-		if (d->content[x] != 'C' && d->content[x] != 'P'
-				&& d->content[x] != '1' 
-				&& d->content[x] != 'E' && d->content[x] != '0')
+		if (d->content[x] != 'C' && d->content[x] != 'P' && d->content[x] != '1' && d->content[x] != 'E' && d->content[x] != '0' && d->content[x] != '\n' && d->content[x] != '\0')
+		{
+			ft_printf("sale\n");
 			exit(0);
+		}
 		if (d->content[x] == 'C')
 			calcul_y_x('C', x, d);
 		if (d->content[x] == 'P')
@@ -36,7 +27,7 @@ void	print_map(d_list *d)
 		if (d->content[x] == '0')
 			calcul_y_x('0', x, d);
 		x++;
-	}*/
+	}
 }
 
 void	calcul_y_x(char c, int iter, d_list *d)
