@@ -55,11 +55,11 @@ void	init_img(d_list *d)
 	h = 50;
 	d->y = (ft_strlen2(d->content) / d->width_d + 1) * 50;
 	d->x = (d->width_d - 1) * 50;
-	d->background = mlx_xpm_file_to_image(d->mlx, "../so_long/fondo.xpm", &w, &h);
+	d->background = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_fondo.xpm", &w, &h);
 	d->img_food = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_food.xpm", &w, &h);
 	d->img_exit = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_exit.xpm", &w, &h);
 	d->img_walls = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_walls.xpm", &w, &h);
-	d->img_fond = mlx_xpm_file_to_image(d->mlx, "../so_long/fondo.xpm", &w, &h);
+	d->img_fond = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_fondo.xpm", &w, &h);
 	d->img_player = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_player.xpm", &w, &h);
 
 }

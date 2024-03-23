@@ -39,7 +39,7 @@ char	*str_join(char *save, char *s2)
 		str[i + c] = s2[c];
 		c++;
 	}
-	str[ft_strlen2(save) + ft_strlen2(s2)] = '\0';
+	str[i + c] = '\0';
 	free(save);
 	return (str);
 }
