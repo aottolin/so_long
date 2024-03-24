@@ -10,6 +10,7 @@ void	ft_error2(d_list *d, int nb)
 
 void	ft_error(d_list *d, int nb)
 {
+	ft_printf("Error\n");
 	if (nb == 1)
 		ft_printf("❌ERROR❌ ---->El argumento debe ser una extension .ber\n");
 	if (nb == 2)

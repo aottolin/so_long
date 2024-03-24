@@ -36,6 +36,7 @@ void	move_w(d_list *d)
 			d->consum--;
 		d->content[x] = '0';
 		d->content[x - d->width_d] = 'P';
+		d->img_player = d->img_player_back;
 	}
 	print_map(d);
 }
@@ -55,6 +56,7 @@ void	move_a(d_list *d)
 			d->consum--;
 		d->content[x] = '0';
 		d->content[x - 1] = 'P';
+		d->img_player = d->img_player_left;
 	}
 	print_map(d);
 }
@@ -74,6 +76,7 @@ void	move_s(d_list *d)
 			d->consum--;
 		d->content[x] = '0';
 		d->content[x + d->width_d] = 'P';
+		d->img_player = d->img_player_front;
 	}
 	print_map(d);
 }
@@ -88,10 +91,12 @@ void	move_d(d_list *d)
 	if (d->content[x + 1] != '1'
 			&& !check_exit(d, d->content[x + 1]))
 	{
+		d->moves++;
 		if (d->content[x + 1] == 'C')
 			d->consum--;
 		d->content[x] = '0';
 		d->content[x + 1] = 'P';
+		d->img_player = d->img_player_right;
 	}
 	print_map(d);
 }

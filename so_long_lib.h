@@ -12,6 +12,10 @@ typedef struct	dd_list
 {
 	void	*mlx;
 	void	*win;
+	void	*img_player_left;
+	void	*img_player_right;
+	void	*img_player_front;
+	void	*img_player_back;
 	void	*img_fond;
 	void	*img_exit;
 	void	*img_food;

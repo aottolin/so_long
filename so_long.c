@@ -62,7 +62,11 @@ void	init_img(d_list *d)
 	d->img_walls = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_walls.xpm", &w, &h);
 	d->img_fond = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_fondo.xpm", &w, &h);
 	d->img_player = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_player.xpm", &w, &h);
+	d->img_player_front = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_player.xpm", &w, &h);
 
+	d->img_player_left = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_player_left.xpm", &w, &h);
+	d->img_player_right = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_player_right.xpm", &w, &h);
+	d->img_player_back = mlx_xpm_file_to_image(d->mlx, "../so_long/img/img_player_back.xpm", &w, &h);
 }
 
 void	check_extension(char *ext, d_list *d)
