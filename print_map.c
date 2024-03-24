@@ -11,10 +11,7 @@ void	print_map(d_list *d)
 		if (d->content[x] == '\n')
 			x++;
 		if (d->content[x] != 'C' && d->content[x] != 'P' && d->content[x] != '1' && d->content[x] != 'E' && d->content[x] != '0')
-		{
-			ft_printf("sale\n");
 			exit(0);
-		}
 		if (d->content[x] == 'C')
 			calcul_y_x('C', x, d);
 		if (d->content[x] == 'P')

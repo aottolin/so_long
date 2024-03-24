@@ -16,6 +16,8 @@ int	main(int argc, char **argv)
 		return (0);
 	d->mlx = mlx_init();
 	init_data(d, argv[1]);
+	mlx_key_hook(d->win, key_press, d);
+	mlx_hook(d->win, 17, 0, ft_free, d);
 	mlx_loop(d->mlx);
 	ft_free(d);
 	return (0);
@@ -41,7 +43,6 @@ int	init_data(d_list *d, char *map)
 		}
         y_offset += 50; 
 	}
-	//mlx_put_image_to_window(d->mlx, d->win, d->background, 0, 0);
 	print_map(d);
 	return (0);
 }

@@ -28,6 +28,7 @@ typedef struct	dd_list
 	int		player;
 	int		wall;
 	int		space_free;
+	int		npccontrol;
 	int		linecontrol;
 	int		y;
 	int		x;
@@ -58,8 +59,9 @@ void	check_start_line(d_list *d);
 void	print_map(d_list *d);
 void	calcul_y_x(char c, int iter, d_list *d);
 void	move_w(d_list *d);
-void	move_w(d_list *d);
+void	move_s(d_list *d);
 void	move_a(d_list *d);
 void	move_d(d_list *d);
 int	key_press(int key, d_list *d);
+int	check_exit(d_list *d, char letter);
 #endif
