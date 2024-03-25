@@ -31,6 +31,7 @@ int	init_data(d_list *d, char *map)
 	check_extension(map, d);
 	read_map(map, d);
 	init_img(d);
+	//check_out(d);
 	d->win = mlx_new_window(d->mlx, d->x, d->y, "so_long");
 	while (y_offset < d->y)
     {

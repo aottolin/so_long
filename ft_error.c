@@ -29,6 +29,8 @@ void	ft_error(d_list *d, int nb)
 		ft_printf("❌ERROR❌ ----->El juego debe tener al menos 1 consumible\n");
 	if (nb == 7)
 		ft_printf("❌ERROR❌ ---->El mapa no es rectangular\n");
+	if (nb == 8)
+		ft_printf("❌ERROR❌ ---->El mapa no tiene un camino hacia la salida\n");
 	if (nb > 7)
 		ft_error2(d, nb);
 	ft_free(d);

@@ -68,4 +68,5 @@ void	move_a(d_list *d);
 void	move_d(d_list *d);
 int	key_press(int key, d_list *d);
 int	check_exit(d_list *d, char letter);
+void	check_out(d_list *d);
 #endif
