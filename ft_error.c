@@ -6,6 +6,12 @@ void	ft_error2(d_list *d, int nb)
 	d->moves--;
 	if (nb == 9)
 		ft_printf("❌ERROR❌ --->No se puede leer el mapa");
+	if (nb == 7)
+		ft_printf("❌ERROR❌ ---->El mapa no es rectangular\n");
+	if (nb == 8)
+		ft_printf("❌ERROR❌ ---->El mapa no tiene un camino hacia la salida\n");
+	if (nb == 10)
+		ft_printf("❌ERROR❌ ---->El mapa pasado como argumento no existe\n");
 }
 
 void	ft_error(d_list *d, int nb)
@@ -22,16 +28,12 @@ void	ft_error(d_list *d, int nb)
 	if (nb == 5 && d->exx > 1)
 		ft_printf("❌ERROR❌ ------>El mapa debe contener SOLO 1 salida\n");
 	if (nb == 5 && d->player < 1)
-		ft_printf("❌ERROR❌  ----->El mapa debe contener un jugador en posicion inicial\n");
+		ft_printf("❌ERROR❌  ->El mapa debe contener 1 jug en Pos inicial\n");
 	if (nb == 5 && d->player > 1)
-		ft_printf("❌ERROR❌ - ---->El mapa debe contener UN SOLO jugador en posicion inicial\n");
+		ft_printf("❌ERROR❌->El mapa debe contener 1 SOLO jug en pos inicial\n");
 	if (nb == 5 && d->consum < 1)
 		ft_printf("❌ERROR❌ ----->El juego debe tener al menos 1 consumible\n");
-	if (nb == 7)
-		ft_printf("❌ERROR❌ ---->El mapa no es rectangular\n");
-	if (nb == 8)
-		ft_printf("❌ERROR❌ ---->El mapa no tiene un camino hacia la salida\n");
-	if (nb > 7)
+	if (nb >= 7)
 		ft_error2(d, nb);
 	ft_free(d);
 }

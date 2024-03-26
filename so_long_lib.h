@@ -12,10 +12,10 @@ typedef struct	dd_list
 {
 	void	*mlx;
 	void	*win;
-	void	*img_player_left;
-	void	*img_player_right;
-	void	*img_player_front;
-	void	*img_player_back;
+	void	*img_p_left;
+	void	*img_p_right;
+	void	*img_p_front;
+	void	*img_p_back;
 	void	*img_fond;
 	void	*img_exit;
 	void	*img_food;
@@ -69,4 +69,5 @@ void	move_d(d_list *d);
 int	key_press(int key, d_list *d);
 int	check_exit(d_list *d, char letter);
 void	check_out(d_list *d);
+void	ft_init(d_list *d);
 #endif

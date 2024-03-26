@@ -3,14 +3,16 @@
 
 void	print_map(d_list *d)
 {
-	int x;
+	int	x;
 
 	x = 0;
 	while (d->content[x] != '\0')
 	{
 		if (d->content[x] == '\n')
 			x++;
-		if (d->content[x] != 'C' && d->content[x] != 'P' && d->content[x] != '1' && d->content[x] != 'E' && d->content[x] != '0')
+		if (d->content[x] != 'C' && d->content[x] != 'P'
+			&& d->content[x] != '1' && d->content[x] != 'E'
+			&& d->content[x] != '0')
 			exit(0);
 		if (d->content[x] == 'C')
 			calcul_y_x('C', x, d);
@@ -35,7 +37,6 @@ void	calcul_y_x(char c, int iter, d_list *d)
 	x_ = (iter % d->width_d) * 50;
 	if (d->errors == 0)
 	{
-
 		if (c == 'C')
 			mlx_put_image_to_window(d->mlx, d->win, d->img_food, x_, y_);
 		if (c == 'E')

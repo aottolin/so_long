@@ -23,20 +23,20 @@ int	key_press(int key, d_list *d)
 
 void	move_w(d_list *d)
 {
-	int x;
+	int	x;
 
 	x = 0;
-	while(d->content[x] != 'P')
+	while (d->content[x] != 'P')
 		x++;
 	if (d->content[x - d->width_d] != '1'
-			&& !check_exit(d, d->content[x - d->width_d]))
+		&& !check_exit(d, d->content[x - d->width_d]))
 	{
 		d->moves++;
 		if (d->content[x - d->width_d] == 'C')
 			d->consum--;
 		d->content[x] = '0';
 		d->content[x - d->width_d] = 'P';
-		d->img_player = d->img_player_back;
+		d->img_player = d->img_p_back;
 	}
 	print_map(d);
 }
@@ -49,14 +49,14 @@ void	move_a(d_list *d)
 	while (d->content[x] != 'P')
 		x++;
 	if (d->content[x - 1] != '1'
-			&& !check_exit(d, d->content[x - 1]))
+		&& !check_exit(d, d->content[x - 1]))
 	{
 		d->moves++;
 		if (d->content[x - 1] == 'C')
 			d->consum--;
 		d->content[x] = '0';
 		d->content[x - 1] = 'P';
-		d->img_player = d->img_player_left;
+		d->img_player = d->img_p_left;
 	}
 	print_map(d);
 }
@@ -69,34 +69,34 @@ void	move_s(d_list *d)
 	while (d->content[x] != 'P')
 		x++;
 	if (d->content[x + d->width_d] != '1'
-			&& !check_exit(d, d->content[x + d->width_d]))
+		&& !check_exit(d, d->content[x + d->width_d]))
 	{
 		d->moves++;
 		if (d->content[x + d->width_d] == 'C')
 			d->consum--;
 		d->content[x] = '0';
 		d->content[x + d->width_d] = 'P';
-		d->img_player = d->img_player_front;
+		d->img_player = d->img_p_front;
 	}
 	print_map(d);
 }
 
 void	move_d(d_list *d)
 {
-	int x;
+	int	x;
 
 	x = 0;
 	while (d->content[x] != 'P')
 		x++;
 	if (d->content[x + 1] != '1'
-			&& !check_exit(d, d->content[x + 1]))
+		&& !check_exit(d, d->content[x + 1]))
 	{
 		d->moves++;
 		if (d->content[x + 1] == 'C')
 			d->consum--;
 		d->content[x] = '0';
 		d->content[x + 1] = 'P';
-		d->img_player = d->img_player_right;
+		d->img_player = d->img_p_right;
 	}
 	print_map(d);
 }

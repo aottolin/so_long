@@ -27,7 +27,7 @@ char	*str_join(char *save, char *s2)
 		save = (char *)malloc(sizeof(char) + 1);
 		save[0] = '\0';
 	}
-	str = (char *)malloc(sizeof(char) * (ft_strlen2(save) + ft_strlen2(s2) + 1));
+	str = (char *)malloc(1 * (ft_strlen2(save) + ft_strlen2(s2) + 1));
 	if (!str)
 		return (0);
 	i = -1;

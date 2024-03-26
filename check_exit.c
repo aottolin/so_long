@@ -10,7 +10,8 @@ int	check_exit(d_list *d, char letter)
 	}
 	if (letter == 'E' && d->consum != 0)
 	{
-		ft_printf("El juego no termina hasta que no recoges todos los consumibles\n");
+		ft_printf("⚠️ El juego no termina hasta");
+		ft_printf(" que no recoges todos los consumibles ⚠️ \n");
 		return (1);
 	}
 	else

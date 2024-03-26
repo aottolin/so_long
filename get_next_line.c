@@ -42,4 +42,3 @@ char	*get_read_save(int fd, char *save)
 	free(buffer);
 	return (save);
 }
-
