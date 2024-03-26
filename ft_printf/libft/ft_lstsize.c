@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_lists *lst)
 {
-	t_list	*rr;
+	t_lists	*rr;
 	int		i;
 
 	if (!lst)
@@ -31,7 +31,7 @@ int	ft_lstsize(t_list *lst)
 /*
 int	main(void)
 {
-	t_list	*ato;
+	t_lists	*ato;
 
 	ato = ft_lstnew("alex");
 	ato->next = ft_lstnew("Thomas");

@@ -34,7 +34,7 @@ SILENCE = --no-print-directory
 
 all: $(NAME)
 
-$(NAME) : $(ARCHIVE)
+$(NAME) : $(ARCHIVE) so_long_lib.h Makefile ./ft_printf/ft_printf.h
 	@echo "$(WHITE) $(NAME) $(RESET) $(GREEN) ok $(RESET)"
 	@echo "\n${ORANGE} Minilibx compilando: $(DEF_COLOR)\n"
 	@make -C ./mlx all

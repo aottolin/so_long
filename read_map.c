@@ -1,6 +1,6 @@
 #include "so_long_lib.h"
 
-void	read_map(char *map, d_list *d)
+void	read_map(char *map, t_list *d)
 {
 	int		fd;
 	char	*line;
@@ -29,7 +29,7 @@ void	read_map(char *map, d_list *d)
 	checkline(d);
 }
 
-void	ft_init(d_list *d)
+void	ft_init(t_list *d)
 {
 	d->linecontrol = 2;
 	d->width_d = 0;
@@ -41,7 +41,7 @@ void	ft_init(d_list *d)
 		return ;
 }
 
-void	ft_check_errors(d_list *d, int counter)
+void	ft_check_errors(t_list *d, int counter)
 {
 	if (counter == d->width_d)
 		ft_error(d, 7);
@@ -49,7 +49,7 @@ void	ft_check_errors(d_list *d, int counter)
 		ft_error(d, 5);
 }
 
-void	checkline(d_list *d)
+void	checkline(t_list *d)
 {
 	int	x;
 	int	counter;

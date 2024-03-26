@@ -1,6 +1,6 @@
 #include "so_long_lib.h"
 
-void	check_first_last_line(d_list *d)
+void	check_first_last_line(t_list *d)
 {
 	int	i;
 	int	last;
@@ -24,7 +24,7 @@ void	check_first_last_line(d_list *d)
 	check_start_line(d);
 }
 
-void	check_start_line(d_list *d)
+void	check_start_line(t_list *d)
 {
 	int	i;
 
@@ -46,7 +46,7 @@ void	check_start_line(d_list *d)
 	}
 }
 
-void	check_line_break(char *line, d_list *d)
+void	check_line_break(char *line, t_list *d)
 {
 	int	x;
 

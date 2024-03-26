@@ -1,7 +1,7 @@
 #include "so_long_lib.h"
 #include "../so_long/mlx/mlx.h"
 
-void	print_map(d_list *d)
+void	print_map(t_list *d)
 {
 	int	x;
 
@@ -28,7 +28,7 @@ void	print_map(d_list *d)
 	}
 }
 
-void	calcul_y_x(char c, int iter, d_list *d)
+void	calcul_y_x(char c, int iter, t_list *d)
 {
 	int	x_;
 	int	y_;

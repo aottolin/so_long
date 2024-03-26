@@ -1,7 +1,7 @@
 #include "so_long_lib.h"
 #include "../so_long/mlx/mlx.h"
 
-int	key_press(int key, d_list *d)
+int	key_press(int key, t_list *d)
 {
 	(void)d;
 	if (key == 53)
@@ -21,7 +21,7 @@ int	key_press(int key, d_list *d)
 	return (0);
 }
 
-void	move_w(d_list *d)
+void	move_w(t_list *d)
 {
 	int	x;
 
@@ -41,7 +41,7 @@ void	move_w(d_list *d)
 	print_map(d);
 }
 
-void	move_a(d_list *d)
+void	move_a(t_list *d)
 {
 	int	x;
 
@@ -61,7 +61,7 @@ void	move_a(d_list *d)
 	print_map(d);
 }
 
-void	move_s(d_list *d)
+void	move_s(t_list *d)
 {
 	int	x;
 
@@ -81,7 +81,7 @@ void	move_s(d_list *d)
 	print_map(d);
 }
 
-void	move_d(d_list *d)
+void	move_d(t_list *d)
 {
 	int	x;
 

@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_lists	*ft_lstnew(void *content)
 {
-	t_list	*name;
+	t_lists	*name;
 
-	name = (t_list *)malloc(sizeof(t_list));
+	name = (t_lists *)malloc(sizeof(t_lists));
 	if (!name)
 		return (NULL);
 	if (name)
@@ -27,7 +27,7 @@ t_list	*ft_lstnew(void *content)
 	return (name);
 }
 /*
-void	print_themother(t_list *themotherof)
+void	print_themother(t_lists *themotherof)
 {
 	while (themotherof)
 	{	
@@ -37,7 +37,7 @@ void	print_themother(t_list *themotherof)
 }
 int	main(void)
 {
-	t_list	*ato;
+	t_lists	*ato;
 
 	ato = ft_lstnew("Alex");
 	ato->next = ft_lstnew("Thomas");

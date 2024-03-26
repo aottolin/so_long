@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_lists	*ft_lstlast(t_lists *lst)
 {
-	t_list	*rr;
+	t_lists	*rr;
 
 	if (!lst)
 		return (NULL);
@@ -31,7 +31,7 @@ t_list	*ft_lstlast(t_list *lst)
 /*
 int	main(void)
 {
-	t_list	*ato;
+	t_lists	*ato;
 
 	ato = ft_lstnew("NODO1");
 	ato->next = ft_lstnew("NODO2");

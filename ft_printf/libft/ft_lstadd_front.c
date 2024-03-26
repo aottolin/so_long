@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_lists **lst, t_lists *new)
 {
 	if (!new)
 		return ;
@@ -25,21 +25,21 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	}
 }
 /*
-void	is_print(t_list *print)
+void	is_print(t_lists *print)
 {
 	while (print)
 	{
-		printf("t_list %s\n", (char *)print->content);
+		printf("t_lists %s\n", (char *)print->content);
 		print = print->next;
 	}
 }
 
 int	main(void)
 {
-	t_list	*ato = NULL;
-	t_list	*palabra1;
-	t_list  *palabra2;
-	t_list  *palabra3;
+	t_lists	*ato = NULL;
+	t_lists	*palabra1;
+	t_lists  *palabra2;
+	t_lists  *palabra3;
 
 	palabra1 = ft_lstnew("Palabra 1");
 	palabra2 = ft_lstnew("Palabra 2");

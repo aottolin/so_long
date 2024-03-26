@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_lists **lst, void (*del)(void *))
 {
-	t_list	*tmp;
+	t_lists	*tmp;
 
 	if (!lst || !del)
 		return ;
@@ -37,7 +37,7 @@ void	ft_delete(void *nodo)
 
 int	main(void)
 {
-	t_list	*ato;
+	t_lists	*ato;
 
 	ato = ft_lstnew("nodo1");
 	ato->next = ft_lstnew("nodo2");

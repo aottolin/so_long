@@ -1,6 +1,6 @@
 #include "so_long_lib.h"
 
-void	ft_error2(d_list *d, int nb)
+void	ft_error2(t_list *d, int nb)
 {
 	d->moves++;
 	d->moves--;
@@ -14,7 +14,7 @@ void	ft_error2(d_list *d, int nb)
 		ft_printf("❌ERROR❌ ---->El mapa pasado como argumento no existe\n");
 }
 
-void	ft_error(d_list *d, int nb)
+void	ft_error(t_list *d, int nb)
 {
 	ft_printf("Error\n");
 	if (nb == 1)

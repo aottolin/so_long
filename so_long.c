@@ -3,7 +3,7 @@
 
 int	main(int argc, char **argv)
 {
-	d_list	*d;
+	t_list	*d;
 
 	if (argc != 2)
 	{
@@ -11,7 +11,7 @@ int	main(int argc, char **argv)
 		ft_printf("%s\n", argv[1]);
 		return (0);
 	}
-	d = ft_calloc(1, sizeof(d_list));
+	d = ft_calloc(1, sizeof(t_list));
 	if (!d)
 		return (0);
 	init_data(d, argv[1]);
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-int	init_data(d_list *d, char *map)
+int	init_data(t_list *d, char *map)
 {
 	int	x_offset;
 	int	y_offset;
@@ -50,7 +50,7 @@ int	init_data(d_list *d, char *map)
 	return (0);
 }
 
-void	init_img(d_list *d)
+void	init_img(t_list *d)
 {
 	int	w;
 	int	h;
@@ -71,7 +71,7 @@ void	init_img(d_list *d)
 	d->img_p_back = mlx_xpm_file_to_image(d->mlx, "img/img_p_back.xpm", &w, &h);
 }
 
-void	check_extension(char *ext, d_list *d)
+void	check_extension(char *ext, t_list *d)
 {
 	int	x;
 

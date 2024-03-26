@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_lists *lst, void (*del)(void*))
 {
 	if (!lst || !del)
 		return ;
@@ -31,7 +31,7 @@ void	ft_lib(void *content)
 int	main(void)
 {
 	char *contenido = strdup("contenido que hay dentro del nodo, es un string");
-	t_list	*ato;
+	t_lists	*ato;
 
 	ato = ft_lstnew(contenido);
 	printf("ato antes de eliminar: %s\n", (char *)ato->content);	

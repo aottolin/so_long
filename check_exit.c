@@ -1,7 +1,7 @@
 #include "so_long_lib.h"
 #include "../so_long/mlx/mlx.h"
 
-int	check_exit(d_list *d, char letter)
+int	check_exit(t_list *d, char letter)
 {
 	if (letter == 'E' && d->consum == 0)
 	{

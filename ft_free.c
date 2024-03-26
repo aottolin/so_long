@@ -1,6 +1,6 @@
 #include "so_long_lib.h"
 
-int	ft_free(d_list *d)
+int	ft_free(t_list *d)
 {
 	d->errors = 1;
 	if (d->content)
