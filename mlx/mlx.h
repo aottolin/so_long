@@ -126,7 +126,6 @@ void	*mlx_xpm_file_to_image(void *mlx_ptr, char *filename,
 void    *mlx_png_file_to_image(void *mlx_ptr, char *file, int *width, int *height);
 
 int	mlx_destroy_window(void *mlx_ptr, void *win_ptr);
-
 int	mlx_destroy_image(void *mlx_ptr, void *img_ptr);
 
 /*

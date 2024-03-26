@@ -14,7 +14,6 @@ int	main(int argc, char **argv)
 	d = ft_calloc(1, sizeof(d_list));
 	if (!d)
 		return (0);
-	d->mlx = mlx_init();
 	init_data(d, argv[1]);
 	mlx_key_hook(d->win, key_press, d);
 	mlx_hook(d->win, 17, 0, ft_free, d);
@@ -33,6 +32,7 @@ int	init_data(d_list *d, char *map)
 	d->moves = 0;
 	check_extension(map, d);
 	read_map(map, d);
+	d->mlx = mlx_init();
 	init_img(d);
 	d->win = mlx_new_window(d->mlx, d->x, d->y, "so_long");
 	while (y_offset < d->y)
