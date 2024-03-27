@@ -29,7 +29,7 @@ void	ft_error2(t_list *d, int nb)
 	if (nb == 12)
 		ft_printf("❌ERROR❌ ---->No hay camino valido\n");
 	if (nb == 13)
-		ft_printf("❌ERROR❌ ---->El mapa supera las dimensiones de la pantalla\n");
+		ft_printf("❌ERROR❌->El mapa supera las dimensiones de la pantalla\n");
 }
 
 void	ft_error(t_list *d, int nb)
