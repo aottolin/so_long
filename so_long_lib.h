@@ -85,6 +85,5 @@ int		key_press(int key, t_list *d);
 int		check_exit(t_list *d, char letter);
 void	check_out(t_list *d);
 void	ft_init(t_list *d);
-void	free_visited(int *visited, t_list *d);
-int	valid_path(t_list *d, int x, int p_pos);
+int		valid_path(t_list *d, int x, int p_pos);
 #endif
