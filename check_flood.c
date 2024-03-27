@@ -1,21 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_checkread_map.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aottolin <aottolin@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 12:06:12 by aottolin          #+#    #+#             */
+/*   Updated: 2024/03/27 12:09:54 by aottolin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_lib.h"
 
-int	valid_move(t_list *d, int *visited, int p_pos)
+int	valid_move(t_list *d, int *array, int p_pos)
 {
-	return (d->content[p_pos] != '1' && !visited[p_pos]);
+	return (d->content[p_pos] != '1' && !array[p_pos]);
 }
 
-void	flood_fill(t_list *d, int p_pos, int *visited)
+void	flood_fill(t_list *d, int p_pos, int *array)
 {
-	if (!valid_move(d, visited, p_pos) || visited[p_pos])
+	if (!valid_move(d, array, p_pos) || array[p_pos])
 		return ;
 	if (d->content[p_pos] == 'C')
 		d->flood_consum += 1;
-	visited[p_pos] = 1;
-	flood_fill(d, p_pos - d->width_d, visited);
-	flood_fill(d, p_pos + d->width_d, visited);
-	flood_fill(d, p_pos - 1, visited);
-	flood_fill(d, p_pos + 1, visited);
+	array[p_pos] = 1;
+	flood_fill(d, p_pos - d->width_d, array);
+	flood_fill(d, p_pos + d->width_d, array);
+	flood_fill(d, p_pos - 1, array);
+	flood_fill(d, p_pos + 1, array);
 }
 
 void	exit_position(t_list *d)
@@ -50,9 +62,9 @@ void	player_position(t_list *d, int x, int *p_pos)
 
 int	valid_path(t_list *d, int x, int p_pos)
 {
-	int	*visited;
+	int	*array;
 
-	visited = ft_calloc(d->width_d * d->height, sizeof(int));
+	array = ft_calloc(d->width_d * d->height, sizeof(int));
 	x = 0;
 	while (d->content[x])
 	{
@@ -60,10 +72,11 @@ int	valid_path(t_list *d, int x, int p_pos)
 		x++;
 	}
 	exit_position(d);
-	flood_fill(d, p_pos, visited);
-	x = visited[p_pos] && visited[d->exit_pos];
-	free(visited);
+	flood_fill(d, p_pos, array);
+	x = array[p_pos] && array[d->exit_pos];
+	free(array);
 	if (d->flood_consum != d->consum || !x)
 		ft_error(d, 12);
+	check_windows_size(d);
 	return (0);
 }

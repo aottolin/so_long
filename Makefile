@@ -21,7 +21,7 @@ SRCS = so_long.c \
 	   read_map.c \
 	   ft_strlen2.c \
 	   check_exit.c \
-	   ft_checkread_map.c \
+	   check_read_map.c \
 	   check_flood.c
 	
 OBJS = $(SRCS:.c=.o)

@@ -86,4 +86,5 @@ int		check_exit(t_list *d, char letter);
 void	check_out(t_list *d);
 void	ft_init(t_list *d);
 int		valid_path(t_list *d, int x, int p_pos);
+void	check_windows_size(t_list *d);
 #endif

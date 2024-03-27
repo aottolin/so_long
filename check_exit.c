@@ -29,3 +29,10 @@ int	check_exit(t_list *d, char letter)
 	else
 		return (0);
 }
+
+void	check_windows_size(t_list *d)
+{
+	
+	if (d->width_d > 51 || d->height > 28)
+		ft_error(d, 13);
+}
