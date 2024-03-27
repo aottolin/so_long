@@ -26,6 +26,8 @@ void	ft_error2(t_list *d, int nb)
 		ft_printf("❌ERROR❌ ---->El mapa pasado como argumento no existe\n");
 	if (nb == 11)
 		ft_printf("❌ERROR❌ ---->El mapa esta vacio\n");
+	if (nb == 12)
+		ft_printf("❌ERROR❌ ---->No hay camino valido\n");
 }
 
 void	ft_error(t_list *d, int nb)

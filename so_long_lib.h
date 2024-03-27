@@ -34,6 +34,9 @@ typedef struct dt_list
 	void	*img_walls;
 	void	*img_player;
 	void	*background;
+	int		check_consum;
+	int		exit_pos;
+	int		flood_consum;
 	int		moves;
 	int		color;
 	int		errors;
@@ -82,4 +85,6 @@ int		key_press(int key, t_list *d);
 int		check_exit(t_list *d, char letter);
 void	check_out(t_list *d);
 void	ft_init(t_list *d);
+void	free_visited(int *visited, t_list *d);
+int	valid_path(t_list *d, int x, int p_pos);
 #endif

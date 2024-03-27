@@ -21,7 +21,8 @@ SRCS = so_long.c \
 	   read_map.c \
 	   ft_strlen2.c \
 	   check_exit.c \
-	   ft_checkread_map.c
+	   ft_checkread_map.c \
+	   check_flood.c
 	
 OBJS = $(SRCS:.c=.o)
 INCLUD = ./mlx/mlx.h \ ./ft_printf/ft_printf.h \ so_long_lib.h

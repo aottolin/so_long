@@ -20,7 +20,6 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 	{
 		ft_printf("El numero de argumentos es incorrecto\n");
-		ft_printf("%s\n", argv[1]);
 		return (0);
 	}
 	d = ft_calloc(1, sizeof(t_list));
@@ -44,6 +43,7 @@ int	init_data(t_list *d, char *map)
 	d->moves = 0;
 	check_extension(map, d);
 	read_map(map, d);
+	valid_path(d, 0, 0);
 	d->mlx = mlx_init();
 	init_img(d);
 	d->win = mlx_new_window(d->mlx, d->x, d->y, "so_long");
