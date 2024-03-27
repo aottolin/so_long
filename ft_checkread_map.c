@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_checkread_map.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aottolin <aottolin@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 12:06:12 by aottolin          #+#    #+#             */
+/*   Updated: 2024/03/27 12:09:54 by aottolin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_lib.h"
 
 void	check_first_last_line(t_list *d)
@@ -6,6 +18,8 @@ void	check_first_last_line(t_list *d)
 	int	last;
 
 	i = 0;
+	if (d->content == NULL)
+		ft_error(d, 11);
 	last = ft_strlen2(d->content) - d->width_d;
 	while (i != d->width_d)
 	{

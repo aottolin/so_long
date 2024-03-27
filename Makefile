@@ -27,7 +27,7 @@ OBJS = $(SRCS:.c=.o)
 INCLUD = ./mlx/mlx.h \ ./ft_printf/ft_printf.h \ so_long_lib.h
 CC = gcc
 MAKE_LIB = ar -rcs
-FLAGS = -Wall -Wextra -Werror -MMD
+FLAGS = -Wall -Wextra -Werror -MMD -g
 LIB = -L. -lmlx -framework OpenGL -framework AppKit
 DEPS = $(SRCS:.c=.d)
 SILENCE = --no-print-directory
@@ -39,7 +39,7 @@ $(NAME) : $(ARCHIVE) so_long_lib.h Makefile ./ft_printf/ft_printf.h
 	@echo "\n${ORANGE} Minilibx compilando: $(DEF_COLOR)\n"
 	@make -C ./mlx all
 	@cp ./mlx/libmlx.a .
-	@make -C ./ft_printf all
+	@make -C ./ft_printf all $(SILENCE)
 	@cp ./ft_printf/libftprintf.a .
 	@$(CC) -o $(NAME) $(ARCHIVE) libftprintf.a $(LIB)
 

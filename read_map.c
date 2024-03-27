@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aottolin <aottolin@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 12:07:04 by aottolin          #+#    #+#             */
+/*   Updated: 2024/03/27 12:11:05 by aottolin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_lib.h"
 
 void	read_map(char *map, t_list *d)
@@ -36,9 +48,6 @@ void	ft_init(t_list *d)
 	d->height = 0;
 	d->player = 0;
 	d->exx = 0;
-	d->content = (char *)malloc(sizeof(char) * 1);
-	if (!d->content)
-		return ;
 }
 
 void	ft_check_errors(t_list *d, int counter)

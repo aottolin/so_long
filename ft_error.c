@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aottolin <aottolin@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 12:06:19 by aottolin          #+#    #+#             */
+/*   Updated: 2024/03/27 12:06:20 by aottolin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_lib.h"
 
 void	ft_error2(t_list *d, int nb)
@@ -12,6 +24,8 @@ void	ft_error2(t_list *d, int nb)
 		ft_printf("❌ERROR❌ ---->El mapa no tiene un camino hacia la salida\n");
 	if (nb == 10)
 		ft_printf("❌ERROR❌ ---->El mapa pasado como argumento no existe\n");
+	if (nb == 11)
+		ft_printf("❌ERROR❌ ---->El mapa esta vacio\n");
 }
 
 void	ft_error(t_list *d, int nb)
